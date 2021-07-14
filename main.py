@@ -41,7 +41,6 @@ def get_window_bbox():
 
 
 def get_screenshot():
-    # img = cv2.imread('test/fish2.png', 0)
     img = grab(bbox=get_window_bbox())
     img = np.array(img)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
@@ -62,6 +61,8 @@ def recast_fishing_rod():
     gui.rightClick(0, 0)
 
 def main():
+    # needed for fullscreen to work
+    gui.FAILSAFE = False
     compile_re()
     counter = 0
     print('Running...')
