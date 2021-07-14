@@ -45,7 +45,7 @@ def get_screenshot():
     img = grab(bbox=get_window_bbox())
     img = np.array(img)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    img = cv2.threshold(img, 160, 255, cv2.THRESH_BINARY)[1]
+    img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)[1]
     img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
     return img
 
@@ -73,7 +73,7 @@ def main():
             if 'Fishing Bobber spleshes' in text:
                 counter += 1
                 recast_fishing_rod()
-                time.sleep(1)
+                time.sleep(1.5)
             time.sleep(0.2)
     except KeyboardInterrupt:
         print()
