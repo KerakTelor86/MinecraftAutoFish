@@ -70,6 +70,7 @@ def main():
         while True:
             screen = get_screenshot()
             text = get_text(screen)
+            # NOT A TYPO! OCR detects 'e' instead of 'a'
             if 'Fishing Bobber spleshes' in text:
                 counter += 1
                 recast_fishing_rod()
