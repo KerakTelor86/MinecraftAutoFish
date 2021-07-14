@@ -1,0 +1,6 @@
+# vscode files
+.vscode
+
+# vim files
+*.swp
+*.swo
